@@ -18,9 +18,14 @@
     <meta name="theme-color" content="#0b1120" />
     <meta name="application-name" content="Busters" />
     <meta name="apple-mobile-web-app-title" content="Busters" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
 
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/og-default.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href="https://gaming-website-gilt.vercel.app/" />
 
     <!-- Open Graph -->
@@ -33,22 +38,73 @@
       content="Busters is a creative game studio crafting exceptional game art, 3D modelling, character design, and development services for studios and publishers."
     />
     <meta property="og:url" content="https://gaming-website-gilt.vercel.app/" />
-    <meta property="og:image" content="https://gaming-website-gilt.vercel.app/og-default.png" />
-    <meta property="og:image:secure_url" content="https://gaming-website-gilt.vercel.app/og-default.png" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image" content="https://gaming-website-gilt.vercel.app/og-default.jpg" />
+    <meta property="og:image:secure_url" content="https://gaming-website-gilt.vercel.app/og-default.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Busters — Exceptional Game Design" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@BustersStudio" />
+    <meta name="twitter:creator" content="@BustersStudio" />
     <meta name="twitter:title" content="Busters — Exceptional Game Design" />
     <meta
       name="twitter:description"
       content="Busters is a creative game studio crafting exceptional game art, 3D modelling, character design, and development services for studios and publishers."
     />
-    <meta name="twitter:image" content="https://gaming-website-gilt.vercel.app/og-default.png" />
+    <meta name="twitter:image" content="https://gaming-website-gilt.vercel.app/og-default.jpg" />
     <meta name="twitter:image:alt" content="Busters — Exceptional Game Design" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://gaming-website-gilt.vercel.app/#organization",
+            "name": "Busters",
+            "url": "https://gaming-website-gilt.vercel.app/",
+            "logo": "https://gaming-website-gilt.vercel.app/icon-512.png",
+            "description": "Creative game studio for art, 3D modelling, character design, and development services.",
+            "sameAs": ["https://twitter.com/BustersStudio"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://gaming-website-gilt.vercel.app/#website",
+            "url": "https://gaming-website-gilt.vercel.app/",
+            "name": "Busters — Exceptional Game Design",
+            "description": "Busters is a creative game studio crafting exceptional game art, 3D modelling, character design, and development services for studios and publishers.",
+            "publisher": {
+              "@id": "https://gaming-website-gilt.vercel.app/#organization"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://gaming-website-gilt.vercel.app/#webpage",
+            "url": "https://gaming-website-gilt.vercel.app/",
+            "name": "Busters — Exceptional Game Design",
+            "isPartOf": {
+              "@id": "https://gaming-website-gilt.vercel.app/#website"
+            },
+            "about": {
+              "@id": "https://gaming-website-gilt.vercel.app/#organization"
+            },
+            "description": "Busters is a creative game studio crafting exceptional game art, 3D modelling, character design, and development services for studios and publishers.",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://gaming-website-gilt.vercel.app/og-default.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,7 +114,13 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <h1>Busters — Exceptional Game Design</h1>
+      <p>
+        Busters is a creative game studio crafting exceptional game art, 3D modelling, character
+        design, and development services for studios and publishers.
+      </p>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

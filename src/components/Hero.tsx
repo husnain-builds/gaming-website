@@ -25,6 +25,7 @@ export function Hero() {
             Game Studio
           </p>
           <h1 className="font-display text-4xl font-extrabold leading-[1.1] uppercase sm:text-5xl lg:text-6xl">
+            <span className="block text-cyan">Busters</span>
             We Design
             <br />
             Exceptional
