@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://busters.studio/sitemap.xml
+Sitemap: https://gaming-website-gilt.vercel.app/sitemap.xml

@@ -17,7 +17,7 @@ export function getSiteUrl() {
   if (typeof window !== 'undefined' && window.location?.origin) {
     return window.location.origin
   }
-  return 'https://busters.studio'
+  return 'https://gaming-website-gilt.vercel.app'
 }
 
 export function absoluteUrl(path = '/') {
