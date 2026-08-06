@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion, useTransform } from 'framer-motion'
+import { useParallax } from '../hooks/useParallax'
 
 const awards = [
   { year: '2024', title: 'Best Indie Visual Design', org: 'PixelForge Awards' },
@@ -8,6 +9,9 @@ const awards = [
 ]
 
 export function Awards() {
+  const { ref: parallaxRef, y: parallaxY, scrollYProgress } = useParallax(35)
+  const rotate = useTransform(scrollYProgress, [0, 1], [-6, 6])
+
   return (
     <section className="bg-white section-pad">
       <div className="mx-auto max-w-7xl">
@@ -17,13 +21,15 @@ export function Awards() {
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <motion.div
+            ref={parallaxRef}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
             className="rounded-[28px] bg-gradient-to-b from-slate-50 to-violet/5 p-8"
           >
-            <img
+            <motion.img
+              style={{ y: parallaxY, rotate }}
               src="/images/trophy.png"
               alt="Gaming award trophy"
               className="character-cutout mx-auto w-64"

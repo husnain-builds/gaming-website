@@ -1,21 +1,25 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { getAboutPage } from '../utils/about-data.js'
+import { useParallax } from '../hooks/useParallax'
 
 export function Focus() {
   const about = getAboutPage()
+  const { ref: parallaxRef, y: parallaxY } = useParallax(40)
 
   return (
     <section id="about" className="relative overflow-hidden bg-white section-pad">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
         <motion.div
+          ref={parallaxRef}
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <img
+          <motion.img
+            style={{ y: parallaxY }}
             src={about.focusImage}
             alt="Floating fantasy island"
             className="character-cutout float-delayed mx-auto w-[88%] max-w-lg"

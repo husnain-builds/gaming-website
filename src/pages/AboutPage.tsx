@@ -31,9 +31,9 @@ export function AboutPage() {
         path={meta.path}
       />
       <section className="relative overflow-hidden bg-navy text-white">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(168,85,247,0.22),transparent_45%),radial-gradient(ellipse_at_80%_80%,rgba(34,211,238,0.12),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(168,85,247,0.22),transparent_45%),radial-gradient(ellipse_at_80%_80%,rgba(251,191,36,0.12),transparent_40%)]" />
         <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-32 lg:px-8 lg:pb-20 lg:pt-36">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
             {about.eyebrow}
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-extrabold uppercase leading-tight sm:text-5xl lg:text-6xl">
@@ -145,7 +145,7 @@ export function AboutPage() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="rounded-[22px] border border-slate-100 p-6"
               >
-                <p className="font-display text-xs font-bold text-cyan">
+                <p className="font-display text-xs font-bold text-gold">
                   {String(i + 1).padStart(2, '0')}
                 </p>
                 <h3 className="mt-3 font-display text-sm font-bold uppercase tracking-wide text-navy">
@@ -168,7 +168,7 @@ export function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
             >
-              <p className="font-display text-4xl font-extrabold text-cyan sm:text-5xl">
+              <p className="font-display text-4xl font-extrabold text-gold sm:text-5xl">
                 {stat.value}
               </p>
               <p className="mt-2 text-sm uppercase tracking-wider text-white/55">{stat.label}</p>

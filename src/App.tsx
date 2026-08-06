@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { ScrollToTop } from './components/ScrollToTop'
+import { ScrollProgressBar } from './components/ScrollProgressBar'
 import { HomePage } from './pages/HomePage'
 import { BlogsPage } from './pages/BlogsPage'
 import { BlogDetailPage } from './pages/BlogDetailPage'
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ScrollProgressBar />
       <div className="overflow-x-hidden">
         <Navbar />
         <main>

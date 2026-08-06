@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display text-xs font-bold uppercase tracking-widest text-cyan">
+            <h4 className="font-display text-xs font-bold uppercase tracking-widest text-gold">
               Sitemap
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-white/65">
@@ -56,7 +56,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display text-xs font-bold uppercase tracking-widest text-cyan">
+            <h4 className="font-display text-xs font-bold uppercase tracking-widest text-gold">
               Services
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-white/65">
@@ -71,7 +71,7 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/services" className="text-cyan transition hover:text-white">
+                <Link to="/services" className="text-gold transition hover:text-white">
                   View all services
                 </Link>
               </li>
@@ -79,7 +79,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display text-xs font-bold uppercase tracking-widest text-cyan">
+            <h4 className="font-display text-xs font-bold uppercase tracking-widest text-gold">
               Social
             </h4>
             <ul className="mt-4 flex gap-3 text-sm text-white/65">

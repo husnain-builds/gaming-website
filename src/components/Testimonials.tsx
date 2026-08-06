@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useParallax } from '../hooks/useParallax'
 
 const quotes = [
   {
@@ -25,15 +26,20 @@ const quotes = [
 ]
 
 export function Testimonials() {
+  const { ref: parallaxRef, y: parallaxY } = useParallax<HTMLElement>(70)
+
   return (
-    <section className="slant-both relative overflow-hidden bg-navy text-white section-pad">
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 opacity-30 lg:block">
+    <section ref={parallaxRef} className="slant-both relative overflow-hidden bg-navy text-white section-pad">
+      <motion.div
+        style={{ y: parallaxY }}
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 opacity-30 lg:block"
+      >
         <img
           src="/images/mage-character.png"
           alt=""
           className="h-full w-full object-contain object-right"
         />
-      </div>
+      </motion.div>
 
       <div className="relative mx-auto max-w-7xl py-8">
         <h2 className="font-display text-3xl font-extrabold uppercase leading-tight sm:text-4xl lg:text-5xl">

@@ -31,7 +31,7 @@ export function PortfolioDetailPage() {
         <div className="relative mx-auto max-w-5xl px-5 pb-14 pt-32 lg:px-8 lg:pb-16 lg:pt-36">
           <Link
             to="/portfolio"
-            className="inline-flex items-center gap-2 text-sm font-medium text-cyan transition hover:text-white"
+            className="inline-flex items-center gap-2 text-sm font-medium text-gold transition hover:text-white"
           >
             ← Back to portfolio
           </Link>

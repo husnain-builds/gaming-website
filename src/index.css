@@ -6,7 +6,7 @@
   --color-navy-soft: #121a2e;
   --color-violet: #a855f7;
   --color-violet-deep: #7c3aed;
-  --color-cyan: #22d3ee;
+  --color-gold: #fbbf24;
   --color-ink: #0f172a;
   --color-muted: #64748b;
   --font-display: "Orbitron", sans-serif;
@@ -50,7 +50,7 @@ a {
 }
 
 .site-header .nav-link:hover {
-  color: #22d3ee !important;
+  color: #fbbf24 !important;
 }
 
 button,

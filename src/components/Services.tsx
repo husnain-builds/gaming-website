@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { getFeaturedServices } from '../utils/services-data.js'
+import { useParallax } from '../hooks/useParallax'
 
 export function Services() {
   const services = getFeaturedServices(2)
+  const { ref: parallaxRef, y: parallaxY } = useParallax(45)
 
   return (
     <section
@@ -12,14 +14,16 @@ export function Services() {
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 pt-10 pb-10 lg:grid-cols-[0.9fr_1.1fr]">
         <motion.div
+          ref={parallaxRef}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.65 }}
           className="relative order-2 lg:order-1"
         >
-          <div className="pointer-events-none absolute inset-x-8 bottom-8 h-24 rounded-full bg-cyan/20 blur-3xl" />
-          <img
+          <div className="pointer-events-none absolute inset-x-8 bottom-8 h-24 rounded-full bg-gold/20 blur-3xl" />
+          <motion.img
+            style={{ y: parallaxY }}
             src="/images/mage-character.png"
             alt="Fantasy mage character"
             className="character-cutout float relative z-10 mx-auto w-[85%] max-w-md"
@@ -57,7 +61,7 @@ export function Services() {
                     alt={service.title}
                     className="mb-4 h-36 w-full rounded-xl object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <h3 className="font-display text-sm font-bold uppercase tracking-wider text-cyan">
+                  <h3 className="font-display text-sm font-bold uppercase tracking-wider text-gold">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/65">{service.excerpt}</p>

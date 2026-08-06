@@ -50,7 +50,7 @@ export function Navbar() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `nav-link text-sm font-medium transition ${isActive ? '!text-cyan' : ''}`
+              `nav-link text-sm font-medium transition ${isActive ? '!text-gold' : ''}`
             }
           >
             About Us
@@ -58,7 +58,7 @@ export function Navbar() {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              `nav-link text-sm font-medium transition ${isActive ? '!text-cyan' : ''}`
+              `nav-link text-sm font-medium transition ${isActive ? '!text-gold' : ''}`
             }
           >
             Services
@@ -66,7 +66,7 @@ export function Navbar() {
           <NavLink
             to="/portfolio"
             className={({ isActive }) =>
-              `nav-link text-sm font-medium transition ${isActive ? '!text-cyan' : ''}`
+              `nav-link text-sm font-medium transition ${isActive ? '!text-gold' : ''}`
             }
           >
             Portfolio
@@ -74,7 +74,7 @@ export function Navbar() {
           <NavLink
             to="/blogs"
             className={({ isActive }) =>
-              `nav-link text-sm font-medium transition ${isActive ? '!text-cyan' : ''}`
+              `nav-link text-sm font-medium transition ${isActive ? '!text-gold' : ''}`
             }
           >
             Blog

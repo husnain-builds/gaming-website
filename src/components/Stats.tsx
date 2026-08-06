@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useParallax } from '../hooks/useParallax'
 
 const stats = [
   { value: '190+', label: 'Projects Delivered' },
@@ -8,16 +9,20 @@ const stats = [
 ]
 
 export function Stats() {
+  const { ref: parallaxRef, y: parallaxY } = useParallax(50)
+
   return (
     <section className="slant-both relative overflow-hidden bg-navy text-white section-pad">
       <div className="mx-auto grid max-w-7xl items-center gap-12 py-8 lg:grid-cols-2">
         <motion.div
+          ref={parallaxRef}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <img
+          <motion.img
+            style={{ y: parallaxY }}
             src="/images/stats-island.png"
             alt="Fantasy island illustration"
             className="character-cutout float mx-auto w-[80%] max-w-md"
@@ -33,7 +38,7 @@ export function Stats() {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
             >
-              <p className="font-display text-4xl font-extrabold text-cyan sm:text-5xl">
+              <p className="font-display text-4xl font-extrabold text-gold sm:text-5xl">
                 {stat.value}
               </p>
               <p className="mt-2 text-sm uppercase tracking-wider text-white/55">{stat.label}</p>

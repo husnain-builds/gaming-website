@@ -1,36 +1,51 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export function Hero() {
-  return (
-    <section
-      id="home"
-      className="relative min-h-screen overflow-hidden bg-navy text-white"
-      style={{
-        backgroundImage:
-          'linear-gradient(120deg, rgba(7,11,22,0.92) 0%, rgba(11,17,32,0.78) 45%, rgba(11,17,32,0.55) 100%), url(/images/hero-bg.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(168,85,247,0.18),transparent_45%),radial-gradient(ellipse_at_80%_70%,rgba(34,211,238,0.12),transparent_40%)]" />
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  })
+  const bgY = useTransform(scrollYProgress, [0, 1], ['-6%', '10%'])
+  const charY = useTransform(scrollYProgress, [0, 1], [0, -70])
+  const charRotate = useTransform(scrollYProgress, [0, 1], [0, -4])
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 90])
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-5 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pt-24">
+  return (
+    <section ref={sectionRef} id="home" className="relative min-h-screen overflow-hidden bg-navy text-white">
+      <motion.div
+        className="absolute inset-0 scale-110"
+        style={{
+          y: bgY,
+          backgroundImage:
+            'linear-gradient(120deg, rgba(7,11,22,0.92) 0%, rgba(11,17,32,0.78) 45%, rgba(11,17,32,0.55) 100%), url(/images/hero-bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(168,85,247,0.18),transparent_45%),radial-gradient(ellipse_at_80%_70%,rgba(251,191,36,0.12),transparent_40%)]" />
+
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-5 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pt-24">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="max-w-xl"
         >
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-cyan">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-gold">
             Game Studio
           </p>
           <h1 className="font-display text-4xl font-extrabold leading-[1.1] uppercase sm:text-5xl lg:text-6xl">
-            <span className="block text-cyan">Busters</span>
+            <span className="block text-gold">Busters</span>
             We Design
             <br />
             Exceptional
             <br />
-            <span className="bg-gradient-to-r from-violet to-cyan bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet to-gold bg-clip-text text-transparent">
               Games
             </span>
           </h1>
@@ -55,15 +70,17 @@ export function Hero() {
           className="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-xl"
         >
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[55%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/25 blur-3xl" />
-          <img
-            src="/images/hero-character.png?v=2"
-            alt="Fantasy warrior character"
-            width={1024}
-            height={1536}
-            className="character-cutout float relative z-10 mx-auto h-auto w-full max-w-[420px] object-contain lg:max-w-[520px]"
-          />
+          <motion.div style={{ y: charY, rotate: charRotate }} className="relative z-10">
+            <img
+              src="/images/hero-character.png?v=2"
+              alt="Fantasy warrior character"
+              width={1024}
+              height={1536}
+              className="character-cutout float mx-auto h-auto w-full max-w-[420px] object-contain lg:max-w-[520px]"
+            />
+          </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   )
 }
